@@ -19,13 +19,13 @@ public class Seminar4a {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-       String filename="Seminar4.a";
-       createFile(filename);
-       //uncomment later on when we shoudl read the file
-       //readFile(filename);
-        
-    }
+//    public static void main(String[] args) {
+//       String filename="Seminar4.a";
+//       createFile(filename);
+//       //uncomment later on when we shoudl read the file
+//       //readFile(filename);
+//        
+//    }
     
     //creates a file and write the bytes 255,254,..,0 to it
     public static void createFile(String filename){

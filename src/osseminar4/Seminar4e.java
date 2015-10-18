@@ -12,16 +12,16 @@ public class Seminar4e {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        //write welcome message and read input from user
-        //print welcome message
-        printWelcome();
-        //read filename from user
-        java.util.Scanner sc=new java.util.Scanner(System.in);
-        String filename=sc.nextLine();
-        //print result
-        printResult(filename);
-    }
+//    public static void main(String[] args) {
+//        //write welcome message and read input from user
+//        //print welcome message
+//        printWelcome();
+//        //read filename from user
+//        java.util.Scanner sc=new java.util.Scanner(System.in);
+//        String filename=sc.nextLine();
+//        //print result
+//        printResult(filename);
+//    }
     
     public static void printWelcome(){
         //start to open the current directory

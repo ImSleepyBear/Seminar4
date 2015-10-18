@@ -5,37 +5,42 @@
  */
 package osseminar4;
 
+import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+public class Seminar4b implements Serializable {
 
-public class Seminar4b {
-
+//    java.io.DataOutputStream doutStream;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-       String filename="Seminar4.b";
-       createFile(filename);
-       //uncomment later on when we shoudl read the file
-       readFile(filename);
-    }
-    
+//    public static void main(String[] args) {
+//       String filename="Seminar4.b";
+//       createFile(filename);
+//       //uncomment later on when we shoudl read the file
+//       readFile(filename);
+//    }
     //creates a file and write the bytes 255,254,..,0 to it
-    public static void createFile(String filename){
-         java.io.FileOutputStream outFile = null;
+    public static void createFile(String filename) {
+        java.io.FileOutputStream outFile = null;
+        java.io.DataOutputStream doutStream = null;
         try {
             // create some data
-            int i=0x12345678; //hexadecimal konstant
+            int i = 0x12345678; //hexadecimal konstant
             //create FileOutputStream
             outFile = new java.io.FileOutputStream(filename);
+            doutStream = new java.io.DataOutputStream(outFile);
             //write dat to outputstream
             outFile.write(i);
+            doutStream.write(i);
             //close file
             outFile.close();
-            
+            doutStream.close();
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -48,24 +53,37 @@ public class Seminar4b {
             }
         }
     }
-    
+
     //open a file with the name filename and read and prints the bytes from the file
-    public static void readFile(String filename){
-         java.io.FileInputStream inFile = null;
+    public static void readFile(String filename) {
+        java.io.FileInputStream inFile = null;
+//        java.io.DataInputStream dinStream = null;
         try {
             //create FileInputStream
             inFile = new java.io.FileInputStream(filename);
+//            dinStream = new java.io.DataInputStream(inFile);
+            
             //read byte from file
             //print byte
-            int data=inFile.read();
-            while(data!=-1){
+            int data = inFile.read();
+//            int data_stream = dinStream.read();
+            
+            while (data != -1) {
                 System.out.printf("%02x ", data);
                 System.out.println((byte) data);
-                data=inFile.read();
+                data = inFile.read();
             }
             //close file
             inFile.close();
             
+//            while (data_stream != -1) {
+//                System.out.printf("%02x ", data_stream);
+//                System.out.println((byte) data_stream);
+//                data_stream = dinStream.read();
+//            }
+//            //close file
+//            inFile.close();
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
