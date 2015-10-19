@@ -35,10 +35,10 @@ public class Seminar4b implements Serializable {
             outFile = new java.io.FileOutputStream(filename);
             doutStream = new java.io.DataOutputStream(outFile);
             //write dat to outputstream
-            outFile.write(i);
+//            outFile.write(i);
             doutStream.write(i);
             //close file
-            outFile.close();
+//            outFile.close();
             doutStream.close();
 
         } catch (FileNotFoundException ex) {
@@ -47,7 +47,8 @@ public class Seminar4b implements Serializable {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                outFile.close();
+//                outFile.close();
+                doutStream.close();
             } catch (IOException ex) {
                 Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -57,11 +58,11 @@ public class Seminar4b implements Serializable {
     //open a file with the name filename and read and prints the bytes from the file
     public static void readFile(String filename) {
         java.io.FileInputStream inFile = null;
-//        java.io.DataInputStream dinStream = null;
+        java.io.DataInputStream dinStream = null;
         try {
             //create FileInputStream
             inFile = new java.io.FileInputStream(filename);
-//            dinStream = new java.io.DataInputStream(inFile);
+            dinStream = new java.io.DataInputStream(inFile);
             
             //read byte from file
             //print byte
