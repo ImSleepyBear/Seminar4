@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Seminar4b implements Serializable {
+public class Seminar4b /*implements Serializable */{
 
 //    java.io.DataOutputStream doutStream;
     /**
@@ -36,7 +36,8 @@ public class Seminar4b implements Serializable {
             doutStream = new java.io.DataOutputStream(outFile);
             //write dat to outputstream
 //            outFile.write(i);
-            doutStream.write(i);
+            doutStream.writeInt(i);
+            System.out.println("stream has been written");
             //close file
 //            outFile.close();
             doutStream.close();
@@ -66,24 +67,25 @@ public class Seminar4b implements Serializable {
             
             //read byte from file
             //print byte
-            int data = inFile.read();
-//            int data_stream = dinStream.read();
+//            int data = inFile.read();
+            int data_stream = dinStream.readInt();
             
-            while (data != -1) {
-                System.out.printf("%02x ", data);
-                System.out.println((byte) data);
-                data = inFile.read();
-            }
-            //close file
-            inFile.close();
-            
-//            while (data_stream != -1) {
-//                System.out.printf("%02x ", data_stream);
-//                System.out.println((byte) data_stream);
-//                data_stream = dinStream.read();
+//            while (data != -1) {
+//                System.out.printf("%02x ", data);
+//                System.out.println((byte) data);
+//                data = inFile.read();
 //            }
 //            //close file
 //            inFile.close();
+            
+            while (data_stream != -1) {
+                System.out.printf("%02x ", data_stream);
+                System.out.println((byte) data_stream);
+                data_stream = dinStream.read();
+            }
+            System.out.println("stream has been read");
+            //close file
+            dinStream.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
