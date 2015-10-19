@@ -14,6 +14,11 @@ import java.util.logging.Logger;
 
 public class Seminar4b /*implements Serializable */{
 
+    /*
+    orginalkoden som kom med är bortkommenterad och ny kod som är
+    anpassad till tasksen har utgått från orgianlkoden
+    */
+    
 //    java.io.DataOutputStream doutStream;
     /**
      * @param args the command line arguments
