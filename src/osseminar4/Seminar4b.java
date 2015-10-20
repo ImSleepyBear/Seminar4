@@ -86,7 +86,7 @@ public class Seminar4b /*implements Serializable */{
             //print byte
 //            int data = inFile.read();
 //            int data_stream = dinStream.readInt();
-            int data_scan = scan.nextInt();
+//            int data_scan = scan.nextInt();
             
 //            while (data != -1) {
 //                System.out.printf("%02x ", data);
@@ -101,10 +101,13 @@ public class Seminar4b /*implements Serializable */{
 //                System.out.println((byte) data_stream);
 //                data_stream = dinStream.read();
 //            }
-            while (data_scan != -1) {
-                System.out.printf("%02x ", data_scan);
-                System.out.println((byte) data_scan);
-                data_scan = scan.nextInt();
+//            while (data_scan != -1) {
+            while (scan.hasNextInt()) {
+//                System.out.printf("%02x ", data_scan);
+//                System.out.println((byte) data_scan);
+//                data_scan = scan.nextInt();
+                int data_scan = scan.nextInt();
+                System.out.println(data_scan);
             }
             System.out.println("stream has been read");
             //close file
