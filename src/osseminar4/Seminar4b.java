@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -74,15 +75,18 @@ public class Seminar4b /*implements Serializable */{
     public static void readFile(String filename) {
         java.io.FileInputStream inFile = null;
         java.io.DataInputStream dinStream = null;
+        Scanner scan = null;
         try {
             //create FileInputStream
             inFile = new java.io.FileInputStream(filename);
-            dinStream = new java.io.DataInputStream(inFile);
+//            dinStream = new java.io.DataInputStream(inFile);
+            scan = new Scanner(inFile);
             
             //read byte from file
             //print byte
 //            int data = inFile.read();
-            int data_stream = dinStream.readInt();
+//            int data_stream = dinStream.readInt();
+            int data_scan = scan.nextInt();
             
 //            while (data != -1) {
 //                System.out.printf("%02x ", data);
@@ -92,14 +96,19 @@ public class Seminar4b /*implements Serializable */{
 //            //close file
 //            inFile.close();
             
-            while (data_stream != -1) {
-                System.out.printf("%02x ", data_stream);
-                System.out.println((byte) data_stream);
-                data_stream = dinStream.read();
+//            while (data_stream != -1) {
+//                System.out.printf("%02x ", data_stream);
+//                System.out.println((byte) data_stream);
+//                data_stream = dinStream.read();
+//            }
+            while (data_scan != -1) {
+                System.out.printf("%02x ", data_scan);
+                System.out.println((byte) data_scan);
+                data_scan = scan.nextInt();
             }
             System.out.println("stream has been read");
             //close file
-            dinStream.close();
+            scan.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
@@ -108,6 +117,7 @@ public class Seminar4b /*implements Serializable */{
         } finally {
             try {
                 inFile.close();
+//                scan.close();
             } catch (IOException ex) {
                 Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
             }

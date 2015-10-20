@@ -32,7 +32,7 @@ public class OSSeminar4 {
 //        String filename = "Seminar4.b";
         String filename = "Seminar4.c";
         s4b.createFile(filename);
-//        s4b.readFile(filename);
+        s4b.readFile(filename);
         
         
         //Task 4e
