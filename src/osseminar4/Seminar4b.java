@@ -8,6 +8,7 @@ package osseminar4;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,32 +34,40 @@ public class Seminar4b /*implements Serializable */{
     public static void createFile(String filename) {
         java.io.FileOutputStream outFile = null;
         java.io.DataOutputStream doutStream = null;
+        PrintWriter printWrite = null;
         try {
             // create some data
             int i = 0x12345678; //hexadecimal konstant
+            int b = 135;
             //create FileOutputStream
             outFile = new java.io.FileOutputStream(filename);
-            doutStream = new java.io.DataOutputStream(outFile);
+//            doutStream = new java.io.DataOutputStream(outFile);
+            printWrite = new PrintWriter(outFile);
             //write dat to outputstream
 //            outFile.write(i);
-            doutStream.writeInt(i);
+//            doutStream.writeInt(i);
+            printWrite.print(b);
             System.out.println("stream has been written");
             //close file
 //            outFile.close();
-            doutStream.close();
+//            doutStream.close();
+            printWrite.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-//                outFile.close();
-                doutStream.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        } 
+//        catch (IOException ex) {
+//            Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
+//        } 
+//        finally {
+//            try {
+////                outFile.close();
+////                doutStream.close();
+//                printWrite.close();
+//            } catch (IOException ex) {
+//                Logger.getLogger(Seminar4b.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
     }
 
     //open a file with the name filename and read and prints the bytes from the file
