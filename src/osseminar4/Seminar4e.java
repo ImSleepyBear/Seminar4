@@ -40,6 +40,9 @@ public class Seminar4e {
         
         //check if file is a regular file or a directory
         //depending on the test call printFileInfo or printDirectoryInfo
+        
+        File file = new File(filename);
+        
     }
     
     public static void printFileInfo(File file){

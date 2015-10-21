@@ -21,10 +21,10 @@ public class OSSeminar4 {
     public static void main(String[] args) {
 
         //Task 4a
-        Seminar4a s4a = new Seminar4a();
-        String filename = "Seminar4.a";
-        s4a.createFile(filename);
-        s4a.readFile(filename);
+//        Seminar4a s4a = new Seminar4a();
+//        String filename = "Seminar4.a";
+//        s4a.createFile(filename);
+//        s4a.readFile(filename);
         
         
         //Task 4b
@@ -36,11 +36,11 @@ public class OSSeminar4 {
         
         
         //Task 4e
-//        Seminar4e s4e = new Seminar4e();
-//        s4e.printWelcome();
-//        java.util.Scanner sc = new java.util.Scanner(System.in);
-//        String fileName = sc.nextLine();
-//        s4e.printResult(fileName);
+        Seminar4e s4e = new Seminar4e();
+        s4e.printWelcome();
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        String fileName = sc.nextLine();
+        s4e.printResult(fileName);
     }
 
 }
