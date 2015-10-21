@@ -21,18 +21,18 @@ public class OSSeminar4 {
     public static void main(String[] args) {
 
         //Task 4a
-//        Seminar4a s4a = new Seminar4a();
-//        String filename = "Seminar4.a";
-//        createFile(filename);
-//        s4a.readFile(filename);
+        Seminar4a s4a = new Seminar4a();
+        String filename = "Seminar4.a";
+        s4a.createFile(filename);
+        s4a.readFile(filename);
         
         
         //Task 4b
-        Seminar4b s4b = new Seminar4b();
-//        String filename = "Seminar4.b";
-        String filename = "Seminar4.c";
-        s4b.createFile(filename);
-        s4b.readFile(filename);
+//        Seminar4b s4b = new Seminar4b();
+////        String filename = "Seminar4.b";
+//        String filename = "Seminar4.c";
+//        s4b.createFile(filename);
+//        s4b.readFile(filename);
         
         
         //Task 4e
