@@ -53,7 +53,7 @@ public class Seminar4e {
         //(You need to convert into a readable form for instance with Date object)
         //4. Show if the file is readable, writeable and if it is a hidden file
         
-        //sätt in kod som printar till filen här
+        //sätt in kod som printar till filen här, 
     }
     
     public static void printDirectoryInfo(File file){
