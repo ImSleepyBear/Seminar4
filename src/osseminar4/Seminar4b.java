@@ -39,7 +39,7 @@ public class Seminar4b /*implements Serializable */{
         try {
             // create some data
             int i = 0x12345678; //hexadecimal konstant
-            int b = 135;
+//            int b = 135;
             //create FileOutputStream
             outFile = new java.io.FileOutputStream(filename);
 //            doutStream = new java.io.DataOutputStream(outFile);
@@ -47,7 +47,13 @@ public class Seminar4b /*implements Serializable */{
             //write dat to outputstream
 //            outFile.write(i);
 //            doutStream.writeInt(i);
-            printWrite.print(b);
+//            printWrite.print(b);
+            
+            for(int x = 1; x <=5; x = x + 2){
+                printWrite.print(x);
+                printWrite.print(" ");
+            }
+            
             System.out.println("stream has been written");
             //close file
 //            outFile.close();
