@@ -5,6 +5,7 @@
  */
 package osseminar4;
 
+import java.util.Scanner;
 import static osseminar4.Seminar4a.createFile;
 import static osseminar4.Seminar4b.createFile;
 import static osseminar4.Seminar4b.readFile;
@@ -28,17 +29,17 @@ public class OSSeminar4 {
         
         
         //Task 4b
-        Seminar4b s4b = new Seminar4b();
-//        String filename = "Seminar4.b";
-        String filename = "Seminar4.c";
-        s4b.createFile(filename);
-        s4b.readFile(filename);
+//        Seminar4b s4b = new Seminar4b();
+////        String filename = "Seminar4.b";
+//        String filename = "Seminar4.c";
+//        s4b.createFile(filename);
+//        s4b.readFile(filename);
         
         
         //Task 4e
-//        Seminar4e s4e = new Seminar4e();
-//        s4e.printWelcome();
-//        java.util.Scanner sc = new java.util.Scanner(System.in);
+        Seminar4e s4e = new Seminar4e();
+        s4e.printWelcome();
+//        Scanner sc = new java.util.Scanner(System.in);
 //        String fileName = sc.nextLine();
 //        s4e.printResult(fileName);
     }
