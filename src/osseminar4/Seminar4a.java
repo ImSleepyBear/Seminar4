@@ -68,24 +68,38 @@ public class Seminar4a {
 
     //open a file with the name filename and read and prints the bytes from the file
     public static void readFile(String filename) {
-        java.io.FileInputStream inFile = null;
+//        java.io.FileInputStream inFile = null;
         RandomAccessFile in = null;
         try {
             //create FileInputStream
-            inFile = new java.io.FileInputStream(filename);
+//            inFile = new java.io.FileInputStream(filename);
             in = new RandomAccessFile(filename, "r");
             //read byte from file
             //print byte
 //            int data = inFile.read();
-            int data = in.read();
-            while (data != -1) {
-                System.out.printf("%02x ", data);
-                System.out.println((byte) data);
-//                data = inFile.read();
-                data = in.read();
+            int [] seekData = new int[] {12, 5, 167, 200};
+            
+            for(int i = 0; i < seekData.length; i++){
+                
+                in.seek(seekData[i]);
+                
+                if(in.read() == -1){
+                    System.err.println("Out of bounds at index " + i + " in SEEK array");
+                }else {
+                    System.out.println(in.readByte());
+                }
+                
             }
+            
+//            int data = in.read();
+//            while (data != -1) {
+//                System.out.printf("%02x ", data);
+//                System.out.println((byte) data);
+////                data = inFile.read();
+//                data = in.read();
+//            }
             //close file
-            inFile.close();
+//            inFile.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Seminar4a.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,7 +107,8 @@ public class Seminar4a {
             Logger.getLogger(Seminar4a.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                inFile.close();
+//                inFile.close();
+                in.close();
             } catch (IOException ex) {
                 Logger.getLogger(Seminar4a.class.getName()).log(Level.SEVERE, null, ex);
             }
